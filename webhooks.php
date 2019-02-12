@@ -63,4 +63,4 @@ if (!is_null($events['events'])) {
         echo $result . "\r\n";
 	}
 }
-echo "OK".filemtime("webhooks.php");
+echo "OK ".date("Y-m-d h:i:sa", filemtime("webhooks.php"));
