@@ -35,12 +35,13 @@ if (!is_null($events['events'])) {
 			];
 			$post = json_encode($data);
 		}else if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
-            $receivedStickerID = $event['message']['stickerId'];
-            $receivedPackageID = $event['message']['packageId'];
+   			$replyToken = $event['replyToken'];			
+            		$receivedStickerID = $event['message']['stickerId'];
+            		$receivedPackageID = $event['message']['packageId'];
 			$messages = [
 				'type' => 'sticker',
-                'stickerPackageId' => $receivedPackageID,
-                'stickerId' => $receivedPackageID,
+                		'stickerPackageId' => $receivedPackageID,
+                		'stickerId' => $receivedPackageID,
 			];
 			// Make a POST Request to Messaging API to reply to sender
 
