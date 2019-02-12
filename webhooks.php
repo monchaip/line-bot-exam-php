@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
             		$receivedStickerID = $event['message']['stickerId'];
             		$receivedPackageID = $event['message']['packageId'];
 			$messages = [
-				'type' => 'sticker',
+				'messages' => 'Reply',
                 		'stickerPackageId' => $receivedPackageID,
                 		'stickerId' => $receivedPackageID,
 			];
