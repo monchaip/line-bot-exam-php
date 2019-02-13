@@ -37,11 +37,8 @@ if (!is_null($events['events'])) {
    			$replyToken = $event['replyToken'];			
             		$receivedStickerID = $event['message']['stickerId'];
             		$receivedPackageID = $event['message']['packageId'];
-			$messages[0] = [
-				'type' => 'text',
-                		'text' => 'Reply'
-			];
-			$messages[1] = [
+			
+			$messages = [
 				'type' => 'sticker',
                 		'packageId' => 1,
                 		'stickerId' => 2
