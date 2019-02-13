@@ -33,7 +33,6 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$post = json_encode($data);
 		}else if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
    			$replyToken = $event['replyToken'];			
             		$receivedStickerID = $event['message']['stickerId'];
@@ -54,8 +53,9 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
         }
-		$url = 'https://api.line.me/v2/bot/message/reply';
-		$ch = curl_init($url);
+	$post = json_encode($data);
+	$url = 'https://api.line.me/v2/bot/message/reply';
+	$ch = curl_init($url);
     	$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
