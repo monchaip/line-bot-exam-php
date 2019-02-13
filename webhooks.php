@@ -39,8 +39,8 @@ if (!is_null($events['events'])) {
             		$receivedStickerID = $event['message']['stickerId'];
             		$receivedPackageID = $event['message']['packageId'];
 			$messages = [
-				'messages' => 'Reply',
-                		'stickerPackageId' => 1,
+				'type' => 'sticker',
+                		'packageId' => 1,
                 		'stickerId' => 2,
 			];
 			// Make a POST Request to Messaging API to reply to sender
